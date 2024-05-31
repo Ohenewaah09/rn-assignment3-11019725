@@ -11,6 +11,8 @@ export default function Header() {
             <Text style={styles.subHeaderText}>14 task today</Text>
            </View>   
       <Image source={require("./person.png")} style={styles.personImage}/>
+
+      
     </View>
         
     )
@@ -39,5 +41,6 @@ const styles = StyleSheet.create({
         width: 46,
         height: 45,
         marginRight:10 
-      }
+      },
+       
 })
