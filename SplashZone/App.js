@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Image, StyleSheet, Text, TextInput, View, ScrollView} from 'react-native';
 import Header from './components/header';
 
 
@@ -17,7 +17,7 @@ export default function App() {
     </View>
     <Image source={require("./components/bxSlider.png")} style={styles.Slider}/>
       </View>
-
+      <ScrollView> 
       <View style={styles.categorySection}>
         <Text style={styles.TextSection}>Categories</Text>
       </View>
@@ -36,9 +36,52 @@ export default function App() {
         </View>
       </View>
 
-      <View style={styles.contexts}>
-        <Text>Ongoing Tasks </Text>
+      <View style={styles.twoImg}>
+        <View style={styles.Img1Container}>
+        <Text style={styles.exercise1}>Code</Text>
+        <Text style={styles.task1}>12 Tasks</Text>
+      <Image source={require("./components/code.webp")} style={styles.Image}/>
+        </View>
+        
+        <View style={styles.Img2Container}>
+        <Text style={styles.exercise1}>Systems</Text>
+        <Text style={styles.task1}>12 Tasks</Text>
+        <Image source={require("./components/computer.png")} style={styles.Image}/>
+        </View>
       </View>
+
+      <View style={styles.twoImg}>
+        <View style={styles.Img1Container}>
+        <Text style={styles.exercise1}>Meditation</Text>
+        <Text style={styles.task1}>12 Tasks</Text>
+      <Image source={require("./components/relaxation.png")} style={styles.Image}/>
+        </View>
+        
+        <View style={styles.Img2Container}>
+        <Text style={styles.exercise1}>Workout</Text>
+        <Text style={styles.task1}>12 Tasks</Text>
+        <Image source={require("./components/workout.png")} style={styles.Image}/>
+        </View>
+      </View>
+
+      <View style={styles.twoImg}>
+        <View style={styles.Img1Container}>
+        <Text style={styles.exercise1}>Cook</Text>
+        <Text style={styles.task1}>12 Tasks</Text>
+      <Image source={require("./components/cook.jpeg")} style={styles.Image}/>
+        </View>
+        
+        <View style={styles.Img2Container}>
+        <Text style={styles.exercise1}>Networking</Text>
+        <Text style={styles.task1}>12 Tasks</Text>
+        <Image source={require("./components/networking.jpeg")} style={styles.Image}/>
+        </View>
+      </View>
+
+      <View style={styles.contexts}>
+        <Text style={styles.ongoingTask}>Ongoing Task </Text>
+      </View>
+      </ScrollView>
       <StatusBar style="auto" />
     </View>
   );
@@ -102,7 +145,7 @@ const styles = StyleSheet.create({
    },
    Img1Container:{
     backgroundColor:'white',
-    marginLeft:18,
+    marginLeft:16,
     marginTop:10,
     borderRadius:10,
     padding:8,
@@ -123,5 +166,14 @@ const styles = StyleSheet.create({
    },
    twoImg:{
     flexDirection:'row'
+   },
+   contexts:{
+    marginTop:40,
+    marginLeft:20,
+   },
+
+   ongoingTask:{
+    fontSize:18,
+    fontWeight:'700'
    }
 });
