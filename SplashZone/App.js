@@ -1,14 +1,37 @@
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Image, StyleSheet, Text, TextInput, View, ScrollView} from 'react-native';
+import { Image, StyleSheet, Text, TextInput, View, ScrollView, FlatList} from 'react-native';
 import Header from './components/header';
 
 
 
 export default function App() {
+  const [tasks, setTasks] = useState([
+    {name: 'Mobile App Development', id: '1'},
+    {name: 'Web Development', id: '2'},
+    {name: 'Push ups', id: '3'},
+    {name: 'Exercises', id: '4'},
+    {name: 'Study', id: '5'},
+    {name: 'Statistics', id: '6'},
+    {name: 'Calculus', id: '7'},
+    {name: 'Programming', id: '8'},
+    {name: 'Code', id: '9'},
+    {name: 'Algorithm', id: '10'},
+    {name: 'Design', id: '11'},
+    {name: 'Systems', id: '12'},
+    {name: 'Meditation', id: '13'},
+    {name: 'Workout', id: '14'},
+    {name: 'Cook', id: '15'},
+    {name: 'Networking', id: '16'},
+    
+  ]);
+
+
   return (
     <View style={styles.container}>
       
       <Header/>
+      
 
       <View style={styles.SearchAndSlider}>
       <View style={styles.searchContainer}>
@@ -17,7 +40,7 @@ export default function App() {
     </View>
     <Image source={require("./components/bxSlider.png")} style={styles.Slider}/>
       </View>
-      <ScrollView> 
+      <ScrollView>
       <View style={styles.categorySection}>
         <Text style={styles.TextSection}>Categories</Text>
       </View>
@@ -78,10 +101,23 @@ export default function App() {
         </View>
       </View>
 
-      <View style={styles.contexts}>
+      
+      </ScrollView> 
+      <FlatList
+    
+      keyExtractor={( item ) => item.id}
+        data={tasks}
+        ListHeaderComponent={() =>(
+        <View style={styles.contexts}>
         <Text style={styles.ongoingTask}>Ongoing Task </Text>
       </View>
-      </ScrollView>
+        )}
+        renderItem={({ item }) => (
+          <Text style={styles.item}>{item.name}</Text>
+        )}
+      />
+      
+      
       <StatusBar style="auto" />
     </View>
   );
@@ -159,10 +195,13 @@ const styles = StyleSheet.create({
    },
    exercise1:{
     marginLeft:36,
-    marginTop:10
+    marginTop:10,
+    fontWeight:'500',
+    fontSize:16
    },
    task1:{
     marginLeft:36,
+    fontSize:12
    },
    twoImg:{
     flexDirection:'row'
@@ -175,5 +214,19 @@ const styles = StyleSheet.create({
    ongoingTask:{
     fontSize:18,
     fontWeight:'700'
+   },
+   item:{
+    marginTop: 24,
+    padding:20,
+    backgroundColor:'white',
+    fontSize:16,
+    fontWeight:'500',
+    marginHorizontal:10,
+    width:350,
+    height:154,
+    borderRadius:15,
+    borderWidth:1,
+    borderColor:'#E8D1BA',
+    alignItems:'center'
    }
 });

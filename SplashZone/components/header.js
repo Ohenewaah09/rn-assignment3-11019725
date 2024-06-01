@@ -21,7 +21,6 @@ export default function Header() {
 const styles = StyleSheet.create({
     header:{
         height:80,
-        backgroundColor: 'purple',
         paddingTop:38,
         marginTop:52,
         flexDirection: 'row',
@@ -40,7 +39,11 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         width: 46,
         height: 45,
-        marginRight:10 
+        marginRight:10,
+        backgroundColor:'white',
+        borderRadius:28
       },
-       
+      subHeaderText:{
+        fontSize:12
+      },
 })
