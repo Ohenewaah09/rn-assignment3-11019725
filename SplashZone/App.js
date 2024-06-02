@@ -40,6 +40,7 @@ export default function App() {
     </View>
     <Image source={require("./components/bxSlider.png")} style={styles.Slider}/>
       </View>
+
       <ScrollView>
       <View style={styles.categorySection}>
         <Text style={styles.TextSection}>Categories</Text>
@@ -204,7 +205,7 @@ const styles = StyleSheet.create({
     fontSize:12
    },
    twoImg:{
-    flexDirection:'row'
+    flexDirection:'row',
    },
    contexts:{
     marginTop:40,
@@ -217,6 +218,7 @@ const styles = StyleSheet.create({
    },
    item:{
     marginTop: 24,
+    marginRight:20,
     padding:20,
     backgroundColor:'white',
     fontSize:16,
@@ -228,5 +230,5 @@ const styles = StyleSheet.create({
     borderWidth:1,
     borderColor:'#E8D1BA',
     alignItems:'center'
-   }
+   },
 });
